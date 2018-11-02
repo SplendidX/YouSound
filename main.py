@@ -45,8 +45,8 @@ def download():
 
 
 def convert():
-    commandconv = "ffmpeg -i \"" + os.path.join(saveDir, re.sub("\.", "" , video.title)) + ".mp4\" -ab 160k -ac 2 -ar 44100 -vn \"" + os.path.join(saveDir, title) + "\".mp3"
-    commandrm = "rm \"" + os.path.join(saveDir, re.sub("\.", "" , video.title)) + ".mp4\""
+    commandconv = "ffmpeg -i \"" + os.path.join(saveDir, re.sub("\.", "" , video.title)) + "\".* -ab 160k -ac 2 -ar 44100 -vn \"" + os.path.join(saveDir, title) + "\".mp3"
+    commandrm = "rm \"" + os.path.join(saveDir, re.sub("\.", "" , video.title)) + "\".*"
     subprocess.call(commandconv, shell=True)
     subprocess.call(commandrm, shell=True)
 
